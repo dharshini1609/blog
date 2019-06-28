@@ -1,0 +1,86 @@
+
+
+<html>
+<head>
+  <title>
+    login
+  </title>
+
+
+<style>
+.button {
+  background-color: #ffd7d7
+  border: none;
+  color: black;
+  padding: 10px 26px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-color: grey ; 
+}
+
+.button:hover {
+background-color: grey
+ }
+body {
+background-color: lavender
+}
+</style>
+</head>
+<body>
+  
+
+
+
+  <% provide(:title, "Log in") %>
+<h1 style="margin-left: 38%; position:absolute; margin-top: -5%">Log in</h1>
+
+   <%= form_tag do%>
+   
+<table style="margin-left: 30%; margin-top: 10%">
+  <b>
+    
+<tr>
+<td><%= label_tag(:u_name, "USERNAME")%></td>
+<td><%= text_field_tag(:uname, "",class: 'hj')%></td>
+</tr>
+<tr>
+<td><%= label_tag(:u_pwd,"PASSWORD")%></td>
+<td><%= password_field_tag(:u_pwd)%></td>
+</tr>
+<% end %>
+<tr>
+<td><button class="button" id="log">LOG IN</button>
+</td>
+</tr>
+</b>
+ 
+ <tr>
+<b>
+  <td>
+    <h4>New User? Click <a href="/blog/signup"> ME </a>to Signup </h4>
+  
+ 
+</td>
+</b>
+</tr>
+</table>
+
+      
+   
+<!-- 
+ <script>
+  window.onload = function(){
+        var inputTest = document.getElementById('user_name').value;
+        localStorage.setItem( 'uservalue', inputTest );
+      }
+  </script>
+      -->
+
+</body>
+</html>

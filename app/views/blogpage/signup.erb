@@ -1,0 +1,47 @@
+
+
+<html>
+<head>
+
+
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	
+
+	body {
+background-color: lightcyan;
+}
+
+
+</style>
+<body>
+
+	<h1 style="margin-left: 36%; position:absolute; margin-top: -7%">WELCOME NEW USER </h1>
+	<%= form_tag do%>
+	<table style=" margin-left: 39%; margin-top: 18%">
+<tr>
+	<td><%= label_tag(:u_name, "USERNAME")%></td>
+
+<td><%= text_field_tag(:uname)%><br><br></td>
+</tr>	
+<tr>
+	<td><%= label_tag(:u_name, "PASSWORD")%></td>
+<td><%= password_field_tag(:u_pwd)%><br></td>
+</tr>
+<%end%>
+</table>
+
+<button type="button" class="btn btn-info" id="sign" style="color: black; position: absolute; margin-left: 49% ;margin-top: 3%">Signup</button></td>
+
+
+
+
+
+</body>
+</html>

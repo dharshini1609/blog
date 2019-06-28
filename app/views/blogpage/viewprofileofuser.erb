@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>	
+	
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+a {
+	text-decoration: none;
+}
+
+
+
+
+.hide{
+ display: none;
+}
+   .show{
+       display:block;
+       }
+.showsavebutton
+{
+	display:block;
+	color: black ; 
+	font-color: white;
+
+
+}
+
+
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>MY BLOG</b></h1>
+  <p>Welcome to your blog<span class="w3-tag"><%="#{$idnum}"%></span></p>
+</header>
+<div style="margin-left: 1170px ; margin-top: -8%">
+<button class="w3-button w3-black w3-padding-large">
+        <a href="/blog/login">
+          LOGOUT</a>
+</button>
+</div>
+<button class="w3-button w3-black w3-padding-large" style="margin-top: 4%" id="postcreateofuser" onclick="onButtonClick()">
+CREATE OWN POST
+</button>
+<div id="div1" >
+<p id = "p1first" class="hide">TITLE</p> 
+<br><input type="text" id="texttitlefirst" class="hide" /> <BR>
+<p id = "p2first" class="hide">YOUR POST</p><br>
+<textarea id="textInputfirst" class="hide" rows="10" cols="50" >
+</textarea> 
+
+
+<button class="w3-button w3-black w3-padding-large w3-margin-bottom w3-hide" 
+id="savepostfirst">SAVE</button>
+</div>
+
+<script type="text/javascript">
+
+
+
+
+function onButtonClick(){
+   // var div1 =  document.getElementById("div2");
+
+   // div1.innerHTML="<input type='text'/>";
+   document.getElementById('textInputfirst').className="show";
+   document.getElementById('savepostfirst').className="w3-button w3-black w3-padding-large w3-margin-bottom w3-show";
+   document.getElementById('texttitlefirst').className="show";
+   document.getElementById('p1first').className="show";
+   document.getElementById('p2first').className="show";
+ }
+
+</script>
+<div class="w3-col l4">
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="w3-container w3-white">
+      <I><h4><b>ABOUT ME</b></h4></I>
+      <p><I>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</I></p>
+  </div>
+    </div>
+  </div><hr>
+</div>
+
+
+
+ <%
+ 	if  @profiledetails.present?
+ 	    @profiledetails.each do |i|%>
+ 	    <%
+       @id = i['user_id']
+       @post_date = i["id"]
+	    @updated_at = Post.getdatetime(@id,@post_date)
+ 	    @datetimevalue = @updated_at[0]['updated_at']%>
+ 	    <%=render partial: 'printtemp', locals:{i: i , datetimevalue: @datetimevalue}%>
+     
+    	
+ 
+    <%end%>
+    <%end%>
+    <footer>
+	<button class="w3-button w3-black w3-padding-large w3-margin-bottom">
+	<a href ="/blog/postpage">  Previous 
+	</a></button>
+	</footer>
+
+
+
+  
+
+</body>
+</html>

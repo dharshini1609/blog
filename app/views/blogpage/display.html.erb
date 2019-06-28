@@ -1,0 +1,231 @@
+
+<html>
+<head>	
+<style type="text/css">
+		
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.SHOWBUTTON3 {
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;S
+  background-color: #e7e7e7; 
+  color: black; 
+  border: 2px solid black;
+   display:block;
+}
+
+.SHOWBUTTON3:hover {
+  background-color: white;
+  color: black;
+}
+
+   .hide{
+       display:none;
+         }
+
+   .show{
+       display:block;
+       }
+
+
+
+
+
+
+
+
+
+
+	</style>
+	
+</head>
+<body>
+
+
+<B><H4>
+<button class="button button1" id="postcreate" onclick="onButtonClick()">CREATE OWN POST</button>
+
+<button class="button button2" id="postview">VIEW POSTS</button>
+<div id="div1">
+<p id = "p1" class="hide">TITLE</p> 
+<br><input type="text" id="texttitle" class="hide" /> <BR>
+<p id = "p2" class="hide">YOUR POST</p><br>
+<textarea id="textInput" class="hide" rows="10" cols="50" >
+</textarea> 
+
+
+<button class="hide" id="savepost">SAVE</button>
+</div>
+
+<!-- <input type = "button" value = "SAVE" id = "savepost" class = "hide" /> -->
+  
+</H4></B>
+
+
+<script type="text/javascript">
+  
+
+
+
+// var getUrlParameter = function getUrlParameter(sParam) {
+//     var sPageURL = window.location.search.substring(1),
+//         sURLVariables = sPageURL.split('=');
+        
+//         if (sURLVariables[0] == sParam) {
+//             return sURLVariables[1] === undefined ? true : decodeURIComponent(sURLVariables[1]);
+//         }
+    
+// };
+//     var id = getUrlParameter('id');
+//alert(id)
+
+
+
+
+
+
+
+function onButtonClick(){
+   // var div1 =  document.getElementById("div2");
+
+   // div1.innerHTML="<input type='text'/>";
+   document.getElementById('textInput').className="show";
+   document.getElementById('savepost').className="SHOWBUTTON3";
+   document.getElementById('texttitle').className="show";
+   document.getElementById('p1').className="show";
+   document.getElementById('p2').className="show";
+    
+    }
+
+
+
+  // .hide{
+  //     display:none;
+  //       }
+
+  // .show{
+  //     display:block;
+  //       }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="div2"></div> 
+
+<input type="button" id="btnok" onclick="addText();" value="text" />
+        <br /> 
+
+
+Hide   Copy Code
+<script type="text/javascript">
+function addText()
+        {
+        var div1=document.getElementById("div2");
+        div1.innerHTML="<input type='text'/>";
+        }
+ </script>
+ -->
+
+
+
+
+
+
+<!-- <input type="button" name="answer" value="Show Text Field" onclick="onButtonClick()" />
+<input class="hide" type="text" id="textInput" value="..." />
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+
+	var greet = localStorage.getItem('uservalue');
+	document.write("WELCOME TO YOUR PAGE");
+	<br>
+   alert("greet");
+</script> -->
+
+
+</body>
+</html>
